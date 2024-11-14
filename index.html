@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmos</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: black;
+        }
+
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="galaxyCanvas"></canvas>
+
+    <script>
+        /**
+         * @author Diego Garces <diegogarces2610@gmail.com>
+         * @since 2014-11-04
+        */
+        const canvas = document.getElementById('galaxyCanvas');
+        const ctx = canvas.getContext('2d');
+        let maxRadius, galaxyCenterX, galaxyCenterY;
+
+        const stars = [];
+        const numStars = 1500;
+        const armCount = 32;
+        const armSpread = 0.09;
+        const rotationSpeed = 0.0008;
+
+        // Función para redimensionar y ajustar el radio
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            galaxyCenterX = canvas.width / 2;
+            galaxyCenterY = canvas.height / 2;
+            maxRadius = Math.min(canvas.width, canvas.height) / 2 - 100;
+            stars.length = 0;
+            createGalaxy();
+        }
+
+        function createGalaxy() {
+            for (let i = 0; i < numStars; i++) {
+                // Ajustar el ángulo para que las estrellas se distribuyan correctamente
+                const armAngle = (i % armCount) * (2 * Math.PI / armCount);
+                const angleOffset = Math.random() * armSpread - armSpread / 2;
+                // Ajuste del ángulo para evitar que se dibujen al revés
+                const angle = (i * 0.1) + armAngle + angleOffset;
+
+                const radius = Math.pow(i / numStars, 2) * maxRadius;
+
+                const baseX = galaxyCenterX + radius * Math.cos(angle);
+                const baseY = galaxyCenterY + radius * Math.sin(angle);
+
+                const clusterSize = 6;
+                const clusterSpread = 2;
+
+                for (let j = 0; j < clusterSize; j++) {
+                    const offsetX = (Math.random() - 0.5) * clusterSpread;
+                    const offsetY = (Math.random() - 0.5) * clusterSpread;
+                    stars.push({ x: baseX + offsetX, y: baseY + offsetY, angle, radius });
+                }
+            }
+        }
+
+        function animateGalaxy() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            stars.forEach(star => {
+                star.angle += rotationSpeed;
+                star.x = galaxyCenterX + star.radius * Math.cos(star.angle); // Recalcular X
+                star.y = galaxyCenterY + star.radius * Math.sin(star.angle); // Recalcular Y
+
+                const starSize = Math.random() * 1.5 + 1.2; // Tamaño aleatorio para dar más vida
+                ctx.beginPath();
+                ctx.arc(star.x, star.y, 2, 0, 2 * Math.PI);
+                ctx.fillStyle = `rgba(255, 255, 255)`;
+                ctx.fill();
+            });
+
+            requestAnimationFrame(animateGalaxy);
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+
+        resizeCanvas();
+        animateGalaxy();
+    </script>
+</body>
+
+</html>
