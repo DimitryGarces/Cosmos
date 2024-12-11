@@ -1,0 +1,94 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1018%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='%230e2a47'%3e%3c/rect%3e%3cpath d='M0 336.02L10 279.33L20 216.96L30 263.53L40 278.37L50 306.64L60 293.92L70 262.44L80 251.25L90 211.39L100 167.98L110 104.71L120 68.64L130 109.76L140 152.28L150 106.01L160 58.97L170 116.26L180 111.6L190 138.15L200 91.68L210 144.28L220 148.2L230 190.66L240 211.7L250 218.88L260 215.19L270 279.42L280 285.21L290 286.29L300 327.66L310 354.73L320 340.81L330 322.77L340 267.9L350 245.44L360 217.12L370 271.24L380 241.71L390 196.13L400 255.02L410 279.79L420 288.55L430 293.54L440 333.19L450 267.54L460 234.51L470 209.5L480 239.46L490 250.09L500 249.47L510 312.34L520 358.49L530 415.73L540 439.44L550 476.23L560 486.22L570 525.9L580 550.14L590 500.96L600 474.4L610 426.96L620 450.34L630 400.09L640 331.99L650 374.71L660 383.92L670 439.33L680 498.98L690 531.35L700 477.96L710 416.54L720 436.44L730 443.9L740 481.49L750 543.76L760 540.17L770 536.53L780 502.93L790 452.26L800 486.97L810 507.51L820 537.66L830 507.94L840 456.97L850 420.2L860 436.48L870 408.79L880 341.22L890 317.87L900 305.59L910 238.05L920 255.82L930 243.58L940 300.56L950 260.36L960 293.12L970 328.36L980 378.32L990 330.17L1000 291.35L1010 290.76L1020 299.08L1030 232L1040 296.73L1050 360.12L1060 428.43L1070 367.93L1080 388.33L1090 401.77L1100 390.69L1110 445.88L1120 405.77L1130 441.18L1140 483.08L1150 471.13L1160 457.16L1170 431.91L1180 414.79L1190 461L1200 486.37L1210 443.14L1220 478.47L1230 486.81L1240 429.69L1250 490.4L1260 556.04L1270 556.64L1280 541.84L1290 558.95L1300 538.44L1310 489.45L1320 549.54L1330 492.83L1340 474.75L1350 428.06L1360 379.92L1370 393.27L1380 374.86L1390 366.56L1400 369.13L1410 421.77L1420 424.86L1430 437.81L1440 474.45' stroke='%23224b75' stroke-width='2'%3e%3c/path%3e%3cpath d='M0 336.02L10 279.33L20 216.96L30 263.53L40 278.37L50 306.64L60 293.92L70 262.44L80 251.25L90 211.39L100 167.98L110 104.71L120 68.64L130 109.76L140 152.28L150 106.01L160 58.97L170 116.26L180 111.6L190 138.15L200 91.68L210 144.28L220 148.2L230 190.66L240 211.7L250 218.88L260 215.19L270 279.42L280 285.21L290 286.29L300 327.66L310 354.73L320 340.81L330 322.77L340 267.9L350 245.44L360 217.12L370 271.24L380 241.71L390 196.13L400 255.02L410 279.79L420 288.55L430 293.54L440 333.19L450 267.54L460 234.51L470 209.5L480 239.46L490 250.09L500 249.47L510 312.34L520 358.49L530 415.73L540 439.44L550 476.23L560 486.22L570 525.9L580 550.14L590 500.96L600 474.4L610 426.96L620 450.34L630 400.09L640 331.99L650 374.71L660 383.92L670 439.33L680 498.98L690 531.35L700 477.96L710 416.54L720 436.44L730 443.9L740 481.49L750 543.76L760 540.17L770 536.53L780 502.93L790 452.26L800 486.97L810 507.51L820 537.66L830 507.94L840 456.97L850 420.2L860 436.48L870 408.79L880 341.22L890 317.87L900 305.59L910 238.05L920 255.82L930 243.58L940 300.56L950 260.36L960 293.12L970 328.36L980 378.32L990 330.17L1000 291.35L1010 290.76L1020 299.08L1030 232L1040 296.73L1050 360.12L1060 428.43L1070 367.93L1080 388.33L1090 401.77L1100 390.69L1110 445.88L1120 405.77L1130 441.18L1140 483.08L1150 471.13L1160 457.16L1170 431.91L1180 414.79L1190 461L1200 486.37L1210 443.14L1220 478.47L1230 486.81L1240 429.69L1250 490.4L1260 556.04L1270 556.64L1280 541.84L1290 558.95L1300 538.44L1310 489.45L1320 549.54L1330 492.83L1340 474.75L1350 428.06L1360 379.92L1370 393.27L1380 374.86L1390 366.56L1400 369.13L1410 421.77L1420 424.86L1430 437.81L1440 474.45L1440 560L0 560z' fill='url(%26quot%3b%23SvgjsLinearGradient1019%26quot%3b)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1018'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='50%25' y1='0%25' x2='50%25' y2='100%25' id='SvgjsLinearGradient1019'%3e%3cstop stop-opacity='0.65' stop-color='%23224b75' offset='0'%3e%3c/stop%3e%3cstop stop-opacity='0' stop-color='%23508dcc' offset='0.8'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");
+    opacity: 0.15; /* Ajusta la intensidad del ruido */
+    z-index: -1;
+    pointer-events: none;
+}
+
+
+.content {
+    text-align: center;
+}
+
+.rotating-image {
+    width: 25vw;
+    animation: rotate 10s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.buttons {
+    margin-top: 5%;
+    display: flex;
+    gap: 10vw;
+    justify-content: center;
+}
+
+.buttons button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    padding: 5px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.buttons button::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background-color: gray;
+    transition: width 0.3s ease-in-out;
+}
+
+.buttons button:hover {
+    color: lightgray;
+}
+
+.buttons button:hover::after {
+    width: 100%;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #222;
+    color: white;
+    position: absolute;
+    bottom: 0;
+}
