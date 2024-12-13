@@ -1,7 +1,6 @@
 body {
-    margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Courier', monospace !;
     background-color: black;
     color: white;
     min-height: 100vh;
@@ -11,76 +10,7 @@ body {
     flex-direction: column;
     position: relative;
     overflow: hidden;
-}
-
-body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1018%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='%230e2a47'%3e%3c/rect%3e%3cpath d='M0 336.02L10 279.33L20 216.96L30 263.53L40 278.37L50 306.64L60 293.92L70 262.44L80 251.25L90 211.39L100 167.98L110 104.71L120 68.64L130 109.76L140 152.28L150 106.01L160 58.97L170 116.26L180 111.6L190 138.15L200 91.68L210 144.28L220 148.2L230 190.66L240 211.7L250 218.88L260 215.19L270 279.42L280 285.21L290 286.29L300 327.66L310 354.73L320 340.81L330 322.77L340 267.9L350 245.44L360 217.12L370 271.24L380 241.71L390 196.13L400 255.02L410 279.79L420 288.55L430 293.54L440 333.19L450 267.54L460 234.51L470 209.5L480 239.46L490 250.09L500 249.47L510 312.34L520 358.49L530 415.73L540 439.44L550 476.23L560 486.22L570 525.9L580 550.14L590 500.96L600 474.4L610 426.96L620 450.34L630 400.09L640 331.99L650 374.71L660 383.92L670 439.33L680 498.98L690 531.35L700 477.96L710 416.54L720 436.44L730 443.9L740 481.49L750 543.76L760 540.17L770 536.53L780 502.93L790 452.26L800 486.97L810 507.51L820 537.66L830 507.94L840 456.97L850 420.2L860 436.48L870 408.79L880 341.22L890 317.87L900 305.59L910 238.05L920 255.82L930 243.58L940 300.56L950 260.36L960 293.12L970 328.36L980 378.32L990 330.17L1000 291.35L1010 290.76L1020 299.08L1030 232L1040 296.73L1050 360.12L1060 428.43L1070 367.93L1080 388.33L1090 401.77L1100 390.69L1110 445.88L1120 405.77L1130 441.18L1140 483.08L1150 471.13L1160 457.16L1170 431.91L1180 414.79L1190 461L1200 486.37L1210 443.14L1220 478.47L1230 486.81L1240 429.69L1250 490.4L1260 556.04L1270 556.64L1280 541.84L1290 558.95L1300 538.44L1310 489.45L1320 549.54L1330 492.83L1340 474.75L1350 428.06L1360 379.92L1370 393.27L1380 374.86L1390 366.56L1400 369.13L1410 421.77L1420 424.86L1430 437.81L1440 474.45' stroke='%23224b75' stroke-width='2'%3e%3c/path%3e%3cpath d='M0 336.02L10 279.33L20 216.96L30 263.53L40 278.37L50 306.64L60 293.92L70 262.44L80 251.25L90 211.39L100 167.98L110 104.71L120 68.64L130 109.76L140 152.28L150 106.01L160 58.97L170 116.26L180 111.6L190 138.15L200 91.68L210 144.28L220 148.2L230 190.66L240 211.7L250 218.88L260 215.19L270 279.42L280 285.21L290 286.29L300 327.66L310 354.73L320 340.81L330 322.77L340 267.9L350 245.44L360 217.12L370 271.24L380 241.71L390 196.13L400 255.02L410 279.79L420 288.55L430 293.54L440 333.19L450 267.54L460 234.51L470 209.5L480 239.46L490 250.09L500 249.47L510 312.34L520 358.49L530 415.73L540 439.44L550 476.23L560 486.22L570 525.9L580 550.14L590 500.96L600 474.4L610 426.96L620 450.34L630 400.09L640 331.99L650 374.71L660 383.92L670 439.33L680 498.98L690 531.35L700 477.96L710 416.54L720 436.44L730 443.9L740 481.49L750 543.76L760 540.17L770 536.53L780 502.93L790 452.26L800 486.97L810 507.51L820 537.66L830 507.94L840 456.97L850 420.2L860 436.48L870 408.79L880 341.22L890 317.87L900 305.59L910 238.05L920 255.82L930 243.58L940 300.56L950 260.36L960 293.12L970 328.36L980 378.32L990 330.17L1000 291.35L1010 290.76L1020 299.08L1030 232L1040 296.73L1050 360.12L1060 428.43L1070 367.93L1080 388.33L1090 401.77L1100 390.69L1110 445.88L1120 405.77L1130 441.18L1140 483.08L1150 471.13L1160 457.16L1170 431.91L1180 414.79L1190 461L1200 486.37L1210 443.14L1220 478.47L1230 486.81L1240 429.69L1250 490.4L1260 556.04L1270 556.64L1280 541.84L1290 558.95L1300 538.44L1310 489.45L1320 549.54L1330 492.83L1340 474.75L1350 428.06L1360 379.92L1370 393.27L1380 374.86L1390 366.56L1400 369.13L1410 421.77L1420 424.86L1430 437.81L1440 474.45L1440 560L0 560z' fill='url(%26quot%3b%23SvgjsLinearGradient1019%26quot%3b)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1018'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='50%25' y1='0%25' x2='50%25' y2='100%25' id='SvgjsLinearGradient1019'%3e%3cstop stop-opacity='0.65' stop-color='%23224b75' offset='0'%3e%3c/stop%3e%3cstop stop-opacity='0' stop-color='%23508dcc' offset='0.8'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");
-    opacity: 0.15; /* Ajusta la intensidad del ruido */
-    z-index: -1;
-    pointer-events: none;
-}
-
-
-.content {
-    text-align: center;
-}
-
-.rotating-image {
-    width: 25vw;
-    animation: rotate 10s linear infinite;
-    margin-bottom: 20px;
-}
-
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-.buttons {
-    margin-top: 5%;
-    display: flex;
-    gap: 10vw;
-    justify-content: center;
-}
-
-.buttons button {
-    background-color: transparent;
-    border: none;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    position: relative;
-    padding: 5px;
-    transition: color 0.3s, background-color 0.3s;
-}
-
-.buttons button::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 2px;
-    width: 0;
-    background-color: gray;
-    transition: width 0.3s ease-in-out;
-}
-
-.buttons button:hover {
-    color: lightgray;
-}
-
-.buttons button:hover::after {
-    width: 100%;
+    animation: fadeIn 2s ease-out forwards;
 }
 
 footer {
@@ -89,6 +19,600 @@ footer {
     padding: 10px 0;
     background-color: #222;
     color: white;
-    position: absolute;
     bottom: 0;
+    margin-top: auto;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.content {
+    margin-top: 30vh;
+    text-align: center;
+}
+
+.rotating-image {
+    width: 10vw;
+    animation: rotate 10s linear infinite;
+}
+
+@media screen and (max-width: 500px) {
+    .rotating-image {
+        width: 10vh;
+    }
+}
+
+.glow {
+    position: absolute;
+    left: 20%;
+    width: 60%;
+    padding: 30% 0;
+    transform: translate(0, -70%) rotate(-45deg);
+    background: radial-gradient(circle at left bottom, #cecde6 10%, #b1afde 20%, rgba(87, 78, 255, 0) 60%);
+    filter: blur(40px);
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.buttons {
+    margin-top: 5%;
+    display: flex;
+    gap: 13vw;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.buttons button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-family: 'Courier', monospace !important;
+    font-size: 1rem;
+    cursor: pointer;
+    position: relative;
+    padding: 5px;
+    transition: color 0.3s, background-color 0.3s;
+    width: 40%;
+}
+
+.hero {
+    font-size: 1rem;
+    line-height: 1;
+    display: inline-block;
+    color: #fff;
+    z-index: 2;
+}
+
+.layers {
+    position: relative;
+}
+
+.layers::before,
+.layers::after {
+    content: attr(data-text);
+    position: absolute;
+    width: 110%;
+    z-index: -1;
+}
+
+.layers::before {
+    top: 10px;
+    left: 15px;
+    color: #e0287d;
+}
+
+.layers::after {
+    top: 5px;
+    left: -10px;
+    color: #1bc7fb;
+}
+
+.single-path {
+    clip-path: polygon(0% 12%,
+            53% 12%,
+            53% 26%,
+            25% 26%,
+            25% 86%,
+            31% 86%,
+            31% 0%,
+            53% 0%,
+            53% 84%,
+            92% 84%,
+            92% 82%,
+            70% 82%,
+            70% 29%,
+            78% 29%,
+            78% 65%,
+            69% 65%,
+            69% 66%,
+            77% 66%,
+            77% 45%,
+            85% 45%,
+            85% 26%,
+            97% 26%,
+            97% 28%,
+            84% 28%,
+            84% 34%,
+            54% 34%,
+            54% 89%,
+            30% 89%,
+            30% 58%,
+            83% 58%,
+            83% 5%,
+            68% 5%,
+            68% 36%,
+            62% 36%,
+            62% 1%,
+            12% 1%,
+            12% 34%,
+            60% 34%,
+            60% 57%,
+            98% 57%,
+            98% 83%,
+            1% 83%,
+            1% 53%,
+            91% 53%,
+            91% 84%,
+            8% 84%,
+            8% 83%,
+            4% 83%);
+}
+
+.paths {
+    animation: paths 5s step-end infinite;
+}
+
+@keyframes paths {
+    0% {
+        clip-path: polygon(0% 43%,
+                83% 43%,
+                83% 22%,
+                23% 22%,
+                23% 24%,
+                91% 24%,
+                91% 26%,
+                18% 26%,
+                18% 83%,
+                29% 83%,
+                29% 17%,
+                41% 17%,
+                41% 39%,
+                18% 39%,
+                18% 82%,
+                54% 82%,
+                54% 88%,
+                19% 88%,
+                19% 4%,
+                39% 4%,
+                39% 14%,
+                76% 14%,
+                76% 52%,
+                23% 52%,
+                23% 35%,
+                19% 35%,
+                19% 8%,
+                36% 8%,
+                36% 31%,
+                73% 31%,
+                73% 16%,
+                1% 16%,
+                1% 56%,
+                50% 56%,
+                50% 8%);
+    }
+
+    5% {
+        clip-path: polygon(0% 29%,
+                44% 29%,
+                44% 83%,
+                94% 83%,
+                94% 56%,
+                11% 56%,
+                11% 64%,
+                94% 64%,
+                94% 70%,
+                88% 70%,
+                88% 32%,
+                18% 32%,
+                18% 96%,
+                10% 96%,
+                10% 62%,
+                9% 62%,
+                9% 84%,
+                68% 84%,
+                68% 50%,
+                52% 50%,
+                52% 55%,
+                35% 55%,
+                35% 87%,
+                25% 87%,
+                25% 39%,
+                15% 39%,
+                15% 88%,
+                52% 88%);
+    }
+
+    30% {
+        clip-path: polygon(0% 53%,
+                93% 53%,
+                93% 62%,
+                68% 62%,
+                68% 37%,
+                97% 37%,
+                97% 89%,
+                13% 89%,
+                13% 45%,
+                51% 45%,
+                51% 88%,
+                17% 88%,
+                17% 54%,
+                81% 54%,
+                81% 75%,
+                79% 75%,
+                79% 76%,
+                38% 76%,
+                38% 28%,
+                61% 28%,
+                61% 12%,
+                55% 12%,
+                55% 62%,
+                68% 62%,
+                68% 51%,
+                0% 51%,
+                0% 92%,
+                63% 92%,
+                63% 4%,
+                65% 4%);
+    }
+
+    45% {
+        clip-path: polygon(0% 33%,
+                2% 33%,
+                2% 69%,
+                58% 69%,
+                58% 94%,
+                55% 94%,
+                55% 25%,
+                33% 25%,
+                33% 85%,
+                16% 85%,
+                16% 19%,
+                5% 19%,
+                5% 20%,
+                79% 20%,
+                79% 96%,
+                93% 96%,
+                93% 50%,
+                5% 50%,
+                5% 74%,
+                55% 74%,
+                55% 57%,
+                96% 57%,
+                96% 59%,
+                87% 59%,
+                87% 65%,
+                82% 65%,
+                82% 39%,
+                63% 39%,
+                63% 92%,
+                4% 92%,
+                4% 36%,
+                24% 36%,
+                24% 70%,
+                1% 70%,
+                1% 43%,
+                15% 43%,
+                15% 28%,
+                23% 28%,
+                23% 71%,
+                90% 71%,
+                90% 86%,
+                97% 86%,
+                97% 1%,
+                60% 1%,
+                60% 67%,
+                71% 67%,
+                71% 91%,
+                17% 91%,
+                17% 14%,
+                39% 14%,
+                39% 30%,
+                58% 30%,
+                58% 11%,
+                52% 11%,
+                52% 83%,
+                68% 83%);
+    }
+
+    76% {
+        clip-path: polygon(0% 26%,
+                15% 26%,
+                15% 73%,
+                72% 73%,
+                72% 70%,
+                77% 70%,
+                77% 75%,
+                8% 75%,
+                8% 42%,
+                4% 42%,
+                4% 61%,
+                17% 61%,
+                17% 12%,
+                26% 12%,
+                26% 63%,
+                73% 63%,
+                73% 43%,
+                90% 43%,
+                90% 67%,
+                50% 67%,
+                50% 41%,
+                42% 41%,
+                42% 46%,
+                50% 46%,
+                50% 84%,
+                96% 84%,
+                96% 78%,
+                49% 78%,
+                49% 25%,
+                63% 25%,
+                63% 14%);
+    }
+
+    90% {
+        clip-path: polygon(0% 41%,
+                13% 41%,
+                13% 6%,
+                87% 6%,
+                87% 93%,
+                10% 93%,
+                10% 13%,
+                89% 13%,
+                89% 6%,
+                3% 6%,
+                3% 8%,
+                16% 8%,
+                16% 79%,
+                0% 79%,
+                0% 99%,
+                92% 99%,
+                92% 90%,
+                5% 90%,
+                5% 60%,
+                0% 60%,
+                0% 48%,
+                89% 48%,
+                89% 13%,
+                80% 13%,
+                80% 43%,
+                95% 43%,
+                95% 19%,
+                80% 19%,
+                80% 85%,
+                38% 85%,
+                38% 62%);
+    }
+
+    1%,
+    7%,
+    33%,
+    47%,
+    78%,
+    93% {
+        clip-path: none;
+    }
+}
+
+.movement {
+    /* Normally this position would be absolute & on the layers, set to relative here so we can see it on the div */
+    position: relative;
+    animation: movement 8s step-end infinite;
+}
+
+@keyframes movement {
+    0% {
+        top: 0px;
+        left: -20px;
+    }
+
+    15% {
+        top: 10px;
+        left: 10px;
+    }
+
+    60% {
+        top: 5px;
+        left: -10px;
+    }
+
+    75% {
+        top: -5px;
+        left: 20px;
+    }
+
+    100% {
+        top: 10px;
+        left: 5px;
+    }
+}
+
+.opacity {
+    animation: opacity 5s step-end infinite;
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 0.1;
+    }
+
+    5% {
+        opacity: 0.7;
+    }
+
+    30% {
+        opacity: 0.4;
+    }
+
+    45% {
+        opacity: 0.6;
+    }
+
+    76% {
+        opacity: 0.4;
+    }
+
+    90% {
+        opacity: 0.8;
+    }
+
+    1%,
+    7%,
+    33%,
+    47%,
+    78%,
+    93% {
+        opacity: 0;
+    }
+}
+
+.font {
+    animation: font 7s step-end infinite;
+}
+
+@keyframes font {
+    0% {
+        font-weight: 100;
+        color: #e0287d;
+        filter: blur(3px);
+    }
+
+    20% {
+        font-weight: 500;
+        color: #fff;
+        filter: blur(0);
+    }
+
+    50% {
+        font-weight: 300;
+        color: #1bc7fb;
+        filter: blur(2px);
+    }
+
+    60% {
+        font-weight: 700;
+        color: #fff;
+        filter: blur(0);
+    }
+
+    90% {
+        font-weight: 500;
+        color: #e0287d;
+        filter: blur(6px);
+    }
+}
+
+.glitch span {
+    animation: paths 5s step-end infinite;
+}
+
+.glitch::before {
+    animation: paths 5s step-end infinite, opacity 5s step-end infinite,
+        font 8s step-end infinite, movement 10s step-end infinite;
+}
+
+.glitch::after {
+    animation: paths 5s step-end infinite, opacity 5s step-end infinite,
+        font 7s step-end infinite, movement 8s step-end infinite;
+}
+
+.hero-container {
+    position: relative;
+    text-align: center;
+}
+
+.environment {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.5;
+    filter: blur(5px);
+}
+
+.cursor {
+    display: inline-block;
+    width: 5px;
+    height: 12px;
+    background-color: #e7e7ff;
+    animation: .6s infinite blink;
+    vertical-align: middle;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 0
+    }
+
+    50% {
+        opacity: 1
+    }
+}
+
+.btnfos-2 {
+    letter-spacing: 0;
+}
+
+.btnfos-2:hover,
+.btnfos-2:active {
+    letter-spacing: 1px;
+}
+
+.btnfos-2:after,
+.btnfos-2:before {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border: 1px solid rgba(255, 255, 255, 0);
+    bottom: 0px;
+    content: " ";
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    -webkit-transition: all 280ms ease-in-out;
+    transition: all 280ms ease-in-out;
+    width: 0;
+}
+
+.btnfos-2:hover:after,
+.btnfos-2:hover:before {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-color: #fff;
+    -webkit-transition: width 350ms ease-in-out;
+    transition: width 350ms ease-in-out;
+    width: 70%;
+}
+
+.btnfos-2:hover:before {
+    bottom: auto;
+    top: 0;
+    width: 70%;
 }
