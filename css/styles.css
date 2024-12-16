@@ -11,14 +11,15 @@ body {
     position: relative;
     overflow: hidden;
     animation: fadeIn 2s ease-out forwards;
+
 }
 
-footer {
+.footer {
     width: 100%;
     text-align: center;
     padding: 10px 0;
-    background-color: #222;
-    color: white;
+    background-color: #cecde6;
+    color: rgb(0, 0, 0);
     bottom: 0;
     margin-top: auto;
 }
@@ -41,13 +42,13 @@ footer {
 }
 
 .rotating-image {
-    width: 10vw;
+    width: 7vw;
     animation: rotate 10s linear infinite;
 }
 
 @media screen and (max-width: 500px) {
     .rotating-image {
-        width: 10vh;
+        width: 7vh;
     }
 }
 
@@ -82,7 +83,7 @@ footer {
 .buttons button {
     background-color: transparent;
     border: none;
-    color: white;
+    color: rgb(0, 0, 0);
     font-family: 'Courier', monospace !important;
     font-size: 1rem;
     cursor: pointer;
@@ -96,7 +97,7 @@ footer {
     font-size: 1rem;
     line-height: 1;
     display: inline-block;
-    color: #fff;
+    color: #000000;
     z-index: 2;
 }
 
@@ -504,7 +505,7 @@ footer {
 
     20% {
         font-weight: 500;
-        color: #fff;
+        color: #000000;
         filter: blur(0);
     }
 
@@ -516,7 +517,7 @@ footer {
 
     60% {
         font-weight: 700;
-        color: #fff;
+        color: #000000;
         filter: blur(0);
     }
 
@@ -560,7 +561,7 @@ footer {
     display: inline-block;
     width: 5px;
     height: 12px;
-    background-color: #e7e7ff;
+    background-color: #000000;
     animation: .6s infinite blink;
     vertical-align: middle;
 }
@@ -605,7 +606,7 @@ footer {
 .btnfos-2:hover:before {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    border-color: #fff;
+    border-color: #000000;
     -webkit-transition: width 350ms ease-in-out;
     transition: width 350ms ease-in-out;
     width: 70%;
