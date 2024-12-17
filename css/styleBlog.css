@@ -1,57 +1,132 @@
+body {
+    background-color: #0E1113;
+    color: #ffffff;
+    background-image: url('../img/fondoLine.jpg');
+    background-size: contain;
+    background-repeat: repeat;
+}
+
 .vote-buttons {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .vote-buttons button {
     background: none;
     border: none;
     cursor: pointer;
 }
+
 .post {
-    border: 1px solid #ddd;
+    border: 0.5px solid #ddd;
     padding: 15px;
     margin-bottom: 20px;
     border-radius: 8px;
+    background-color: #0e111386;
+    border-width: 1px;
 }
+
 .post-title {
     font-size: 1.25rem;
     font-weight: bold;
 }
+
 .post-content {
     margin-top: 10px;
 }
+
 .navbar {
     margin-bottom: 20px;
+    background: #0E1113;
+    border-bottom-color: #ddd;
+    border-bottom-width: 1px;
+    border-bottom-style: ridge;
+    background-image: url('../img/line.png');
+    background-size: auto;
+    background-size: 20vw;
+    background-repeat: no-repeat;
+    background-position: right;
 }
+
+.nav-link {
+    color: #ffffff;
+}
+
 .user-info {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
 }
+
 .user-info img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     margin-right: 10px;
 }
+
 .comments-section {
     margin-top: 20px;
     border-top: 1px solid #ddd;
     padding-top: 15px;
 }
+
 .comment {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
 }
+
 .comment img {
     width: 30px;
     height: 30px;
     border-radius: 50%;
     margin-right: 10px;
 }
+
 .comment-input {
     display: flex;
     gap: 10px;
+}
+
+.search input[type="search"] {
+    width: 40vw;
+    background-color: #F2F2F2;
+    border: 1px solid #D3D3D3;
+    border-radius: 25px;
+    padding: 10px 10px 10px 40px;
+    /* Ajusta el padding izquierdo */
+    height: 36px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    position: relative;
+    /* Para posicionar el icono */
+}
+
+.search .lupa-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    /* Centra verticalmente el icono */
+    color: #000000;
+    /* Color del icono */
+}
+
+.search button[type="submit"] {
+    display: none;
+    /* Oculta el botón */
+}
+
+#login-btn {
+    margin-right: 3%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#login-btn img {
+    width: 28px;
 }
