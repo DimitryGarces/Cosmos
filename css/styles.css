@@ -567,8 +567,8 @@ body {
     display: inline-block;
     width: 5px;
     height: 12px;
-    background-color: #000000;
-    /*animation: .6s infinite blink;*/
+    background-color: #ffffff;
+    animation: .6s infinite blink;
     vertical-align: middle;
 }
 
@@ -586,40 +586,19 @@ body {
 
 .btnfos-2 {
     letter-spacing: 0;
+    transition: background-color 280ms ease-in-out, color 280ms ease-in-out;
+    color: #000000; /* Color negro predeterminado */
 }
 
 .btnfos-2:hover,
 .btnfos-2:active {
-    letter-spacing: 1px;
+    background-color: #d3d3d3; /* Fondo gris claro */
+    letter-spacing: 3px; /* Aumenta el espaciado si es necesario */
 }
 
-.btnfos-2:after,
-.btnfos-2:before {
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    border: 1px solid rgba(255, 255, 255, 0);
-    bottom: 0px;
-    content: " ";
-    display: block;
-    margin: 0 auto;
-    position: relative;
-    -webkit-transition: all 280ms ease-in-out;
-    transition: all 280ms ease-in-out;
-    width: 0;
+.btnfos-2:hover .hero-container,
+.btnfos-2:hover .hero-container h2,
+.btnfos-2:hover .hero-container h2 span {
+    color: #000000; /* Asegúrate de que todos los elementos internos sean negros */
 }
 
-.btnfos-2:hover:after,
-.btnfos-2:hover:before {
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    border-color: #000000;
-    -webkit-transition: width 350ms ease-in-out;
-    transition: width 350ms ease-in-out;
-    width: 70%;
-}
-
-.btnfos-2:hover:before {
-    bottom: auto;
-    top: 0;
-    width: 70%;
-}

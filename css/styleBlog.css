@@ -42,11 +42,16 @@ body {
     border-bottom-color: #ddd;
     border-bottom-width: 1px;
     border-bottom-style: ridge;
-    background-image: url('../img/line.png');
-    background-size: auto;
-    background-size: 20vw;
-    background-repeat: no-repeat;
-    background-position: right;
+}
+
+@media screen and (min-width: 500px) {
+    .navbar {
+        background-image: url('../img/line.png');
+        background-size: auto;
+        background-size: 20vw;
+        background-repeat: no-repeat;
+        background-position: right;
+    }
 }
 
 .nav-link {
