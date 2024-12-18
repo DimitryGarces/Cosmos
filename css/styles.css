@@ -50,7 +50,7 @@ body {
 
 @media screen and (max-width: 500px) {
     .rotating-image {
-        width: 7vh;
+        width: 30vh;
     }
 }
 
