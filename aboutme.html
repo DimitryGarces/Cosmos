@@ -36,6 +36,7 @@
         function validateCode() {
             const codeInput = document.getElementById('accessCode').value;
             const modal = document.getElementById('default-modal-obras');
+            // Andromeda: NGC-224
             if (codeInput === 'NGC-224') {
                 Swal.fire({
                     title: 'Bienvenido',
@@ -46,10 +47,36 @@
                     confirmButtonColor: '#4CAF50',
                 });
                 modal.style.display = 'block';
-            } else {
+            }
+            // Orion: XXX-111
+            else if (codeInput === 'XXX-111') {
+                Swal.fire({
+                    title: 'Bienvenido',
+                    text: 'Te encuentras en Orion.',
+                    icon: 'success',
+                    background: '#D3D3D3',
+                    confirmButtonText: '¡Entendido!',
+                    confirmButtonColor: '#4CAF50',
+                });
+                modal.style.display = 'block';
+            }
+            // Stella: CCX-233
+            else if (codeInput === 'CCX-233') {
+                Swal.fire({
+                    title: 'Bienvenido',
+                    text: 'Te encuentras en Stella.',
+                    icon: 'success',
+                    background: '#D3D3D3',
+                    confirmButtonText: '¡Entendido!',
+                    confirmButtonColor: '#4CAF50',
+                });
+                modal.style.display = 'block';
+            }
+            // Código incorrecto
+            else {
                 Swal.fire({
                     title: 'Oops...',
-                    text: 'Estas en la constelación incorrecta.',
+                    text: 'Código incorrecto. Intenta de nuevo.',
                     icon: 'error',
                     background: '#D3D3D3',
                     confirmButtonText: 'Intentar de nuevo',
