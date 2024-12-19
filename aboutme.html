@@ -1,40 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acceso a Clientes</title>
     <link rel="stylesheet" href="./css/styleAbout.css">
 </head>
+
 <body>
     <a href="/" class="back-button">Regresar</a>
     <canvas id="galaxyCanvas"></canvas>
     <div class="container">
         <h1>
-            <span class="typing">Accede al cosmos<span class="cursor"></span></span>
+            <span class="typing">PassKey<span class="cursor"></span></span>
         </h1>
-        <input type="text" id="accessCode" placeholder="Introduce tu código">
+        <input type="text" id="accessCode" placeholder="Ingresa tu PassKey">
         <button onclick="validateCode()">Acceder</button>
+    </div>
 
-        <div id="content" class="hidden-content">
-            <h2>Bienvenido al Espacio Cibernético</h2>
-            <p>Este es el contenido restringido visible solo después de ingresar el código correcto.</p>
+    <!-- Modal or Content for the PDF Viewer -->
+    <div id="default-modal-obras" class="hidden-content">
+        <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7);">
+            <iframe src="./docx/DeckBrochure_cosmosDic24.pdf" width="100%" height="100%" style="border: none;"
+                allowfullscreen></iframe>
         </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
+        /*
+        @DIMO A. Software - Cosmos
+        */
         function validateCode() {
             const codeInput = document.getElementById('accessCode').value;
-            const content = document.getElementById('content');
-
-            if (codeInput === '1234') { // Cambia '1234' por el código deseado
-                content.style.display = 'block';
+            const modal = document.getElementById('default-modal-obras');
+            if (codeInput === 'NGC-224') {
+                Swal.fire({
+                    title: 'Bienvenido',
+                    text: 'Te encuentras en Andromeda.',
+                    icon: 'success',
+                    background: '#D3D3D3',
+                    confirmButtonText: '¡Entendido!',
+                    confirmButtonColor: '#4CAF50',
+                });
+                modal.style.display = 'block';
             } else {
-                alert('Código inválido. Intenta de nuevo.');
+                Swal.fire({
+                    title: 'Oops...',
+                    text: 'Estas en la constelación incorrecta.',
+                    icon: 'error',
+                    background: '#D3D3D3',
+                    confirmButtonText: 'Intentar de nuevo',
+                    confirmButtonColor: '#FF6347',
+                });
             }
         }
-
-        // Animación del fondo de galaxias
         const canvas = document.getElementById('galaxyCanvas');
         const ctx = canvas.getContext('2d');
 
@@ -72,4 +94,5 @@
         });
     </script>
 </body>
+
 </html>
