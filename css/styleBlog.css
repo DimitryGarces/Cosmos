@@ -25,6 +25,7 @@ body {
     border-radius: 8px;
     background-color: #0e111386;
     border-width: 1px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .post-title {
@@ -134,4 +135,65 @@ body {
 
 #login-btn img {
     width: 28px;
+}
+
+#loginModal .form-label {
+    color: #000;
+    /* Cambia el color de las etiquetas a negro */
+}
+
+#loginModal .form-control {
+    color: #000;
+    /* Asegúrate de que el texto de entrada sea negro */
+    background-color: #fff;
+    /* Fondo blanco para los campos de entrada */
+}
+
+#loginModal .modal-title {
+    color: #000;
+    /* Título del modal en negro */
+}
+
+.new-post-btn {
+    background-color: #747474;
+    /* Color azul */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.new-post-btn:hover {
+    background-color: #000000;
+    /* Color azul más oscuro al hacer hover */
+    cursor: pointer;
+}
+
+.user-info {
+    position: relative;
+    /* Para colocar el botón en posición absoluta */
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.btn-delete-post {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 5px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #fff;
+    /* o el color que prefieras */
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.btn-delete-post:hover {
+    color: #f00;
+    /* rojo al pasar el mouse */
 }

@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cosmos Blog</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <link rel="stylesheet" href="./css/styleBlog.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 
-<body>
+<body class="fade-up">
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a href="/"><img src="./img/comosBlogSinFondo.png" style="height: 10vh;"></a>
@@ -24,7 +26,8 @@
                     <input class="form-control me-2" type="search" placeholder="Buscar temas..." aria-label="Buscar">
                     <span class="lupa-icon"><i class="fas fa-search"></i></span>
                 </form>
-                <a href="#" class="btn btn-dark ms-3 rounded-circle" id="login-btn">
+                <a href="#" class="btn btn-dark ms-3 rounded-circle" id="login-btn" data-bs-toggle="modal"
+                    data-bs-target="#loginModal">
                     <img src="./img/usuario.png" alt="Iniciar Sesión">
                 </a>
             </div>
@@ -32,118 +35,14 @@
     </nav>
 
     <div class="container">
-        <div id="post-feed">
-            <!-- Publicaciones predefinidas -->
-            <div class="post">
-                <div class="row">
-                    <div class="col-1 vote-buttons">
-                        <button onclick="voteUp(this)">&#x25B2;</button>
-                        <span class="vote-count">10</span>
-                        <button onclick="voteDown(this)">&#x25BC;</button>
-                    </div>
-                    <div class="col-11">
-                        <div class="user-info">
-                            <img src="./img/perfil.jpg" alt="Foto de perfil" style="height: 30px; width: 30px;">
-                            <span>EGE</span>
-                        </div>
-                        <div class="post-title">¿Qué opinas sobre las reformas políticas actuales?</div>
-                        <div class="post-content">Las reformas políticas recientes han generado mucho debate en la
-                            sociedad. Algunos piensan que son un paso necesario hacia un cambio, mientras que otros
-                            creen que podrían traer más problemas que soluciones. </div>
-                        <div class="comments-section">
-                            <div class="comment">
-                                <img src="./img/perfil.jpg" alt="Foto de perfil">
-                                <span>Spanky: Estoy de acuerdo con las reformas, creo que son necesarias.</span>
-                            </div>
-                            <div class="comment">
-                                <img src="./img/perfil.jpg" alt="Foto de perfil">
-                                <span>Dimitry: No estoy de acuerdo, podrían tener consecuencias negativas.</span>
-                            </div>
-                            <div class="comment-input">
-                                <input type="text" class="form-control" placeholder="Escribe un comentario..."
-                                    id="comment-input-1">
-                                <button class="btn btn-dark" onclick="addComment(1)">></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="post">
-                <div class="row">
-                    <div class="col-1 vote-buttons">
-                        <button onclick="voteUp(this)">&#x25B2;</button>
-                        <span class="vote-count">25</span>
-                        <button onclick="voteDown(this)">&#x25BC;</button>
-                    </div>
-                    <div class="col-11">
-                        <div class="user-info">
-                            <img src="./img/perfil.jpg" alt="Foto de perfil" style="height: 30px; width: 30px;">
-                            <span>Dimitry</span>
-                        </div>
-                        <div class="post-title">¿Quién es mejor: ChatGPT o Gemini?</div>
-                        <div class="post-content">Ambos son modelos avanzados de inteligencia artificial, pero tienen
-                            características únicas. ChatGPT se destaca por su versatilidad y capacidad de conversación,
-                            mientras que Gemini tiene un enfoque en tareas específicas y precisión. ¿Cuál prefieres y
-                            por qué? </div>
-                        <div class="comments-section">
-                            <div class="comment">
-                                <img src="./img/perfil.jpg" alt="Foto de perfil">
-                                <span>EGE: Prefiero ChatGPT porque es muy bueno en mantener conversaciones
-                                    naturales.</span>
-                            </div>
-                            <div class="comment-input">
-                                <input type="text" class="form-control" placeholder="Escribe un comentario..."
-                                    id="comment-input-2">
-                                <button class="btn btn-dark" onclick="addComment(2)">></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="text-end mb-3">
+            <button class="new-post-btn" id="new-post-btn">Crear Nuevo Post</button>
         </div>
+        <div id="post-feed"></div>
     </div>
 
-    <script>
-        let loggedIn = false; // Cambia esto a true si el usuario está logueado
-
-        function voteUp(button) {
-            const voteCountSpan = button.nextElementSibling;
-            let voteCount = parseInt(voteCountSpan.textContent, 10);
-            voteCountSpan.textContent = voteCount + 1;
-        }
-
-        function voteDown(button) {
-            const voteCountSpan = button.previousElementSibling;
-            let voteCount = parseInt(voteCountSpan.textContent, 10);
-            voteCountSpan.textContent = voteCount - 1;
-        }
-
-        function addComment(postId) {
-            if (!loggedIn) {
-                alert('Debes iniciar sesión para comentar.');
-                return;
-            }
-            const input = document.getElementById(`comment-input-${postId}`);
-            const commentText = input.value.trim();
-            if (commentText) {
-                const commentSection = input.closest('.comments-section');
-                const newComment = document.createElement('div');
-                newComment.classList.add('comment');
-
-                const userImage = document.createElement('img');
-                userImage.src = "https://via.placeholder.com/30"; // URL de la foto de perfil del usuario
-                userImage.alt = "Foto de perfil";
-
-                const commentContent = document.createElement('span');
-                commentContent.textContent = `Usuario: ${commentText}`; // Cambia "Usuario" al nombre real si está disponible
-
-                newComment.appendChild(userImage);
-                newComment.appendChild(commentContent);
-                commentSection.insertBefore(newComment, commentSection.querySelector('.comment-input'));
-                input.value = '';
-            }
-        }
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./js/about.js"></script>
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

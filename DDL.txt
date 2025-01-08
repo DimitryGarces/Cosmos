@@ -1,0 +1,49 @@
+-- Tabla para los usuarios del blog
+CREATE TABLE UsuarioBlog (
+    Id_Usuario INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(100) NOT NULL,
+    Usuario VARCHAR(30) UNIQUE NOT NULL,
+    Contrasenia VARCHAR(255) NOT NULL, -- Se recomienda almacenar contraseñas hash
+    Email VARCHAR(100) UNIQUE,
+    FechaRegistro DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Tabla para los hilos del blog
+CREATE TABLE HiloBlog (
+    Id_Hilo INT AUTO_INCREMENT PRIMARY KEY,
+    Titulo VARCHAR(255) NOT NULL,
+    Asunto TEXT NOT NULL,
+    Id_Usuario INT NOT NULL,
+    FechaCreacion DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (Id_Usuario) REFERENCES UsuarioBlog(Id_Usuario) ON DELETE CASCADE
+);
+
+CREATE TABLE VotosHilo (
+    Id_Hilo INT NOT NULL,
+    Id_Usuario INT NOT NULL,
+    Voto TINYINT NOT NULL, -- 1 = upvote, -1 = downvote
+    FechaVoto DATETIME DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (Id_Hilo, Id_Usuario),
+    FOREIGN KEY (Id_Hilo) REFERENCES HiloBlog(Id_Hilo) ON DELETE CASCADE,
+    FOREIGN KEY (Id_Usuario) REFERENCES UsuarioBlog(Id_Usuario) ON DELETE CASCADE
+);
+
+
+-- Tabla para los comentarios de los hilos
+CREATE TABLE ComentariosBlog (
+    Id_Comentario INT AUTO_INCREMENT PRIMARY KEY,
+    Id_Hilo INT NOT NULL,
+    Id_Usuario INT NOT NULL,
+    Comentario TEXT NOT NULL,
+    FechaComentario DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (Id_Hilo) REFERENCES HiloBlog(Id_Hilo) ON DELETE CASCADE,
+    FOREIGN KEY (Id_Usuario) REFERENCES UsuarioBlog(Id_Usuario) ON DELETE CASCADE
+);
+
+-- Insertar usuarios en la tabla UsuarioBlog
+INSERT INTO UsuarioBlog (Nombre, Usuario, Contrasenia, Email)
+VALUES 
+('Emilio Guerra', 'EGE', 'ege12345', 'ege@cosmos.com'),
+('Diego Garces', 'Dimitry', 'dim12345', 'dimitry@cosmos.com'),
+('Eduardo Lopez', 'Spanky', 'spky1234', 'spanky@cosmos.com');
+
